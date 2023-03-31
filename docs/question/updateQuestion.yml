@@ -1,0 +1,39 @@
+/api/v1/questions/updateQuestion/{id_question}:
+  put:
+    tags:
+      - Question
+    security: 
+    - bearerAuth: []
+    description: update question
+    parameters:
+      - in: path
+        name: id_question 
+        required: true
+        schema:
+            type: integer
+            minimum: 1
+        description: The question ID
+    requestBody:
+      content:
+        application/json:
+          schema:
+             $ref: '#/components/schemas/updateQuestion'            
+    responses:
+      200:
+        description: request succesfull 
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                schema:
+                  type: object
+                  properties:
+                    state:
+                      type: boolean
+                    message:
+                      type: string
+              example:
+                      state: true,
+                      message: Se actializo correctamente
+                

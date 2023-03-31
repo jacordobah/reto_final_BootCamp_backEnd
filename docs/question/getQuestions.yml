@@ -1,0 +1,34 @@
+/api/v1/questions/getQuestions:
+  get:
+    tags:
+      - Question
+    security: 
+    - bearerAuth: []
+    description: Get Questions list
+    produces:
+      - application/json          
+    responses:
+      200:
+        description: request succesfull 
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state: 
+                  type: boolean
+                questions: 
+                  type: array
+                  items:
+                    $ref: '#/definitions/Questions'
+            example:
+              {
+                state: true,
+                questions: [{
+                    question: ¿que dia es hoy?,
+                    id: 12
+                  },{
+                    question: ¿que dia es mañana?,
+                    id: 13
+                  }]
+              }

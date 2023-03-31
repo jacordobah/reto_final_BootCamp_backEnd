@@ -1,0 +1,39 @@
+/api/v1/questions/updateAnswer/{id_option}:
+  put:
+    tags:
+      - Question
+    security: 
+    - bearerAuth: []
+    description: update options of question
+    parameters:
+      - in: path
+        name: id_option 
+        required: true
+        schema:
+            type: integer
+            minimum: 1
+        description: the option ID
+    requestBody:
+      content:
+        application/json:
+          schema:
+             $ref: '#/components/schema/editAnswer'            
+    responses:
+      200:
+        description: request succesfull 
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                schema:
+                  type: object
+                  properties:
+                    state:
+                      type: boolean
+                    message:
+                      type: string
+              example:
+                      state: true,
+                      message: opcion Editada con exito
+               

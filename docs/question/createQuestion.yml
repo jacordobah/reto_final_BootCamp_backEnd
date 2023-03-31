@@ -1,0 +1,29 @@
+/api/v1/questions/create:
+  post:
+    tags:
+      - Question
+    security: 
+    - bearerAuth: []
+    description: Crate Question
+    requestBody:
+      content:
+        application/json:
+          schema:
+             $ref: '#/components/schemas/CreateQuestion'            
+    responses:
+      200:
+        description: request succesfull
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+            example:
+              {
+                    state: true,
+                    message: Pregunta creada exitosamente
+              }

@@ -1,0 +1,94 @@
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: number
+      first_name:
+        type: string
+      second_name:
+        type: string
+      surname:
+        type: string
+      second_sur_name:
+        type: string
+      type_document:
+        type: number
+      document_number:
+        type: number
+      email:
+        type: string
+      password:
+        type: string
+      rol_id:
+        type: number
+      created_at:
+        type: string
+      updated_at:
+        type: string   
+
+components:
+  schemas:
+    login:
+        type: object
+        properties:            
+            email:
+                type: string
+                description: email of user
+            password:
+                type: string
+                description: passworo of user
+        required:
+            - email
+            - password           
+        example:
+            email: user@email.com
+            passoword: 123Abc67         
+
+    CreateUser:
+        type: object
+        properties:            
+            firstName:
+              type: string
+              descriptions: first name of user
+            secondName:
+              type: string
+              descriptions: second name name of user
+            surname:
+              type: string
+              descriptions: surname or last name of user
+            secondSurname:
+              type: string
+              descriptions: second surnamee of user
+            typeDocument:
+              type: number
+              descriptions: type document of user
+            documentNumber:
+              type: number
+              descriptions: document number of user
+            email:
+              type: string
+              descriptions: email of user
+            password:
+              type: string
+              descriptions: password of user
+        required:
+            - firsName
+            - secondName
+            - surname
+            - secondSurname
+            - typeDocumet
+            - documentNumber
+            - email
+            - password           
+        example:
+            firstName: Jhosep
+            secondName: Alberth
+            surname: Archer
+            secondSurName: wembley
+            typeDocument: 1
+            documentNumber: 1111111111
+            email: user@email.com
+            password: 123Abc67
+            phone:  3011111111
+

@@ -1,0 +1,36 @@
+definitions:
+  Answer:
+    type: object
+    properties:
+      id:
+        type: number
+      answer:
+        type: string
+      is_correct:
+        type: boolean
+      question_id:
+        type: number
+      state:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string 
+
+components:
+  schema:
+    editAnswer:
+      type: object
+      properties:
+        opcion:
+          type: string
+          descriptions: the option answer
+        iscorrect: 
+          type: boolean
+          descriptions: if the answer is true or false
+      required:
+        - opcion
+        - iscorrect
+      example:
+        opcion: esta es correcta
+        iscorrect: true

@@ -1,0 +1,28 @@
+/api/v1/create-admin:
+  post:
+    tags:
+      - User
+    security: 
+    - bearerAuth: []
+    description: Crate Admin
+    requestBody:
+      content:
+        application/json:
+          schema:
+             $ref: '#/components/schemas/CreateUser'            
+    responses:
+      200:
+        description: request succesfull
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                  state:
+                    type: boolean
+                  message:
+                    type: string
+              example:
+                state: true,
+                message: Administrador creado correctamente
+              

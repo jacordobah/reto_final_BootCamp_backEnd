@@ -1,0 +1,16 @@
+definitions:
+  Form:
+    type: object
+    properties:
+      id:
+        type: number
+      student_id:
+        type: number
+      answers:
+        type: string
+      state:
+        type: boolean        
+      created_at:
+        type: string
+      updated_at:
+        type: string 

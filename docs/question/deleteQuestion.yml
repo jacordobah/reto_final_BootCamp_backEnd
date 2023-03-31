@@ -1,0 +1,30 @@
+/api/v1/questions/deleteQuestion/{id_question}:
+  delete:
+    tags:
+      - Question
+    security: 
+    - bearerAuth: []
+    description: delete question 
+    parameters:
+      - in: path
+        name: id_question
+        required: true
+        schema:
+            type: integer
+            minimum: 1
+        description: The question ID       
+    responses:
+      200:
+        description: request succesfull 
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+              example:
+                state: true,
+                message: Pregunta Eliminada con exito

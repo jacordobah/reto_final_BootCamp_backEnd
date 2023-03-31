@@ -1,0 +1,49 @@
+/api/v1/questions/getOptions/{id_question}:
+  get:
+    tags:
+      - Question
+    security: 
+    - bearerAuth: []
+    description: get options of question
+    parameters:
+      - in: path
+        name: id_question
+        required: true
+        schema:
+            type: integer
+            minimum: 1
+        description: the question ID
+    produces:
+      - application/json          
+    responses:
+      200:
+        description: request succesfull 
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state: 
+                  type: boolean
+                message:
+                  tyepe: string
+                options: 
+                  type: array
+                  items:
+                    $ref: '#/definitions/Answer'
+            example:
+              state: true
+              message: Listado de opciones
+              options: [{
+                id: 1,
+                option: lunes
+              },{
+                id: 2,
+                option: martes
+              },{
+                id: 3,
+                option: miercoles
+              },{
+                id: 4,
+                option: jueves
+              }]

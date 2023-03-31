@@ -1,0 +1,36 @@
+/api/v1/user/getUser/{id_user}:
+  get:
+    tags:
+      - User
+    security: 
+    - bearerAuth: []
+    description: Get student
+    produces:
+      - application/json  
+    parameters:
+      - in: path
+        name: id_user 
+        required: true
+        schema:
+            type: integer
+            minimum: 1
+        description: The user ID        
+    responses:
+      200:
+        description: request succesfull 
+        content:
+          application/json:
+            schema:
+              type: object
+              items:
+                $ref: '#/definitions/User'
+            example:
+                firstName: daniel
+                secondName: jose
+                surname: cruz
+                secondSurName: casallas
+                typeDocument: 1
+                documentNumber: 123456789
+                email: danielc88@gmail.co
+                phone: 32123122314
+  
