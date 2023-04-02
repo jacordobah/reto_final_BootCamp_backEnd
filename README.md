@@ -10,3 +10,11 @@ covertura 80%  herramienta sonar
 
 
 aparece un error en la herramienta, proximamente lo corregire.
+
+
+
+![image](https://user-images.githubusercontent.com/72110479/229007753-3a921a5b-e7bc-43fa-a114-2e560787c236.png)
+
+
+
+Info de covertura, herramienta propia de Adonis
