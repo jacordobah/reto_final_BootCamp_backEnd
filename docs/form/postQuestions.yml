@@ -1,0 +1,29 @@
+/api/v1/form/postquestions:
+  post:
+    tags:
+      - Form
+    security: 
+    - bearerAuth: []
+    description: Crate form whit student answers. note that studentId is Id in the table. Id != num document
+    requestBody:
+      content:
+        application/json:
+          schema:
+             $ref: '#/components/schemas/postQuestions'
+    responses:
+      200:
+        description: request succefull
+        content:
+          aplication/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+            example:
+              {
+                    state: true,
+                    message: Respuestas almacenadas con exito
+              }

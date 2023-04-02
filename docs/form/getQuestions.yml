@@ -1,0 +1,68 @@
+/api/v1/form/getquestions:
+  get:
+    tags:
+      - Form
+    security: 
+    - bearerAuth: []
+    description: Get questions whit answers options for student 
+    produces:
+      - application/json
+    responses:
+      200:
+        description: request succesfull
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state: 
+                  type: boolean
+                questions: 
+                  type: array
+                  items:
+                    question:
+                      type: string
+                    id:
+                      type: number
+                    options:
+                      type: array
+                      items: 
+                        $ref: '#/definitions/Answer'
+              example:
+                  state: true
+                  questions: [{
+                    question: ¿que dia es hoy?,
+                    id: 12,
+                    options: [{
+                            id: 1,
+                            option: lunes
+                          },{
+                            id: 2,
+                            option: martes
+                          },{
+                            id: 3,
+                            option: miercoles
+                          },{
+                            id: 4,
+                            option: jueves
+                          }]
+                        },{ 
+                    question: ¿que hora es?,
+                    id: 13,
+                    options: [{
+                            id: 5,
+                            option: 14:00
+                          },{
+                            id: 6,
+                            option: 20:00
+                          },{
+                            id: 7,
+                            option: 11:00
+                          },{
+                            id: 8,
+                            option: 9:00
+                          }]
+                        }]
+                  
+
+

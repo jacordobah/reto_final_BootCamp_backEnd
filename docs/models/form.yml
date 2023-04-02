@@ -14,3 +14,21 @@ definitions:
         type: string
       updated_at:
         type: string 
+
+components:
+  schemas:
+    postQuestions:
+      type: object
+      properties:
+        estudianteId:
+          type: string
+          descriptions: the student ID
+        answers:
+          type: array
+          description: array the answers of questions
+      required:
+        - estudianteId
+        - answers
+      example:
+        estudianteId: 123456
+        answers: [4, 1, 3, 5]

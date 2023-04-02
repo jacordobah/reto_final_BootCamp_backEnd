@@ -43,7 +43,7 @@ components:
             - password           
         example:
             email: user@email.com
-            passoword: 123Abc67         
+            password: 123Abc67         
 
     CreateUser:
         type: object
